@@ -1,16 +1,7 @@
-=====================================================================
-          DỰ ÁN NHẬN DẠNG KÝ TỰ VIẾT TAY BẰNG MẠNG CNN
-=====================================================================
-
-
---- MÔ TẢ ---
-
 Đây là ứng dụng có giao diện đồ họa (GUI) được xây dựng bằng Python, với
 mục đích chính là nhận dạng các ký tự viết tay từ hình ảnh do người
 dùng cung cấp. Chương trình sử dụng mô hình Mạng Nơ-ron Tích chập (CNN)
 để đưa ra dự đoán với độ chính xác cao.
-
-
 --- TÍNH NĂNG CHÍNH ---
 
   * Tải và Hiển thị Hình ảnh: Cho phép tải lên các file ảnh (.jpg, .png)
@@ -28,9 +19,7 @@ dùng cung cấp. Chương trình sử dụng mô hình Mạng Nơ-ron Tích ch�
     tỷ lệ phần trăm độ tin cậy của mô hình. Màu sắc kết quả thay đổi
     dựa trên độ tin cậy.
 
-
 --- CẤU TRÚC DỰ ÁN ---
-
 Kho chứa này bao gồm hai phiên bản độc lập của ứng dụng, nằm trong
 hai thư mục riêng biệt:
 
@@ -43,59 +32,15 @@ hai thư mục riêng biệt:
     (47 lớp). Phiên bản này được tối ưu hơn, đã hợp nhất các ký tự có
     hình dạng giống nhau (ví dụ: 'C' và 'c') để tăng độ chính xác.
 
-
 =====================================================================
           HƯỚNG DẪN CÀI ĐẶT VÀ SỬ DỤNG
 =====================================================================
 
---- BƯỚC 1: YÊU CẦU MÔI TRƯỜNG ---
+--- KHỞI ĐỘNG ỨNG DỤNG ---
 
-  * Git
-  * Python 3.8 trở lên
-
-
---- BƯỚC 2: TẢI DỰ ÁN VỀ MÁY ---
-
-  Mở Terminal (hoặc Command Prompt) và chạy lệnh sau:
-  (Thay [URL-CUA-BAN] bằng URL kho chứa Git của bạn)
-
-    git clone [URL-CUA-BAN]
-    cd [TEN-THU-MUC-DU-AN]
-
-
---- BƯỚC 3: CÀI ĐẶT ---
-
-  1. Lựa chọn phiên bản bạn muốn chạy và di chuyển vào thư mục đó.
-     Ví dụ, để chạy phiên bản "balanced":
-
-       cd balanced
-
-  2. Tạo và kích hoạt môi trường ảo (khuyến khích):
-
-     # Lệnh tạo môi trường ảo:
-       python -m venv venv
-
-     # Lệnh kích hoạt (trên Windows):
-       venv\Scripts\activate
-
-     # Lệnh kích hoạt (trên macOS/Linux):
-       source venv/bin/activate
-
-  3. Cài đặt các thư viện cần thiết từ file requirements.txt:
-
-       pip install -r requirements.txt
-
-
---- BƯỚC 4: KHỞI ĐỘNG ỨNG DỤNG ---
-
-  Sau khi cài đặt hoàn tất, đảm bảo bạn đang ở trong thư mục của phiên
-  bản đã chọn (/byclass hoặc /balanced), hãy chạy lệnh sau:
-
-    python main.py
-
+  Sau khi tải xuống hoàn tất, đảm bảo bạn đang ở trong thư mục của phiên
+  bản đã chọn (/byclass hoặc /balanced), hãy chạy 'main.py'
   Cửa sổ ứng dụng sẽ xuất hiện và bạn có thể bắt đầu sử dụng.
-
-
 --- THÔNG TIN HUẤN LUYỆN ---
 
   Mô hình được huấn luyện bằng Google Colab. Chi tiết xem tại:
@@ -113,5 +58,4 @@ hai thư mục riêng biệt:
   * Numpy
   * Matplotlib / Seaborn
 
-=====================================================================
 
