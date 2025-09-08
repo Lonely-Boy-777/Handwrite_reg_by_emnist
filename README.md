@@ -6,18 +6,18 @@ dùng cung cấp. Chương trình sử dụng mô hình Mạng Nơ-ron Tích ch�
 
 --- TÍNH NĂNG CHÍNH ---
 
-  * Tải và Hiển thị Hình ảnh: Cho phép tải lên các file ảnh (.jpg, .png)
+  * Tải và hiển thị hình ảnh: Cho phép tải lên các file ảnh (.jpg, .png)
     và hiển thị trên giao diện chính.
   * Xoay ảnh: Cung cấp tính năng xoay ảnh sang trái hoặc phải để điều
     chỉnh hướng của văn bản.
-  * Cắt Ký tự Trực quan: Người dùng có thể dùng chuột để vẽ một hình
+  * Cắt ký tự trực quan: Người dùng có thể dùng chuột để vẽ một hình
     chữ nhật xung quanh ký tự cần nhận dạng.
-  * Xem Trước Ảnh Đã Xử lý: Hiển thị hình ảnh ký tự sau khi đã được
+  * Xem trước ảnh tiền xử lí: Hiển thị hình ảnh ký tự sau khi đã được
     tiền xử lý (chuyển sang trắng đen, chuẩn hóa kích thước, căn giữa)
     trước khi đưa vào mô hình.
-  * Dự đoán Ký tự: Sử dụng mô hình CNN đã được huấn luyện để dự đoán
+  * Dự đoán ký tự: Sử dụng mô hình CNN đã được huấn luyện để dự đoán
     ký tự với một nút bấm.
-  * Hiển thị Kết quả và Độ tin cậy: Trả về kết quả dự đoán kèm theo
+  * Hiển thị kết quả và độ tin cậy: Trả về kết quả dự đoán kèm theo
     tỷ lệ phần trăm độ tin cậy của mô hình. Màu sắc kết quả thay đổi
     dựa trên độ tin cậy.
 
