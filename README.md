@@ -42,6 +42,8 @@ hai thư mục riêng biệt:
   Sau khi tải xuống hoàn tất, đảm bảo bạn đang ở trong thư mục của phiên
   bản đã chọn (/byclass hoặc /balanced), hãy chạy 'main.py'
   Cửa sổ ứng dụng sẽ xuất hiện và bạn có thể bắt đầu sử dụng.
+
+  
   <img width="589" height="333" alt="image" src="https://github.com/user-attachments/assets/6cc85edb-8a85-4810-af86-f24256b0827d" />
 
 
