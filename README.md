@@ -1,8 +1,3 @@
-Chắc chắn rồi. Dưới đây là một đoạn `README.txt` hoàn chỉnh, chi tiết, sử dụng định dạng văn bản thuần túy. Bạn chỉ cần sao chép toàn bộ nội dung này và dán thẳng vào file `README.txt` của mình.
-
-Nó bao gồm giới thiệu, tính năng, cấu trúc và một hướng dẫn cài đặt rất chi tiết cho người dùng mới.
-
-```
 =====================================================================
           DỰ ÁN NHẬN DẠNG KÝ TỰ VIẾT TAY BẰNG MẠNG CNN
 =====================================================================
@@ -119,4 +114,4 @@ hai thư mục riêng biệt:
   * Matplotlib / Seaborn
 
 =====================================================================
-```
+
