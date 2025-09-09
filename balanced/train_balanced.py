@@ -78,10 +78,10 @@ print(">>> TẢI DỮ LIỆU HOÀN TẤT.")
 def preprocess(image, label):
     image = tf.cast(image, tf.float32) / 255.0
     image = tf.transpose(image, perm=[1, 0, 2])
-    label = tf.one_hot(label, NUM_CLASSES) # Tự động dùng NUM_CLASSES = 47
+    label = tf.one_hot(label, NUM_CLASSES)
     return image, label
 
-# Xây dựng pipeline dữ liệu (Không đổi)
+# Xây dựng pipeline dữ liệu
 print("\n>>> ĐANG XÂY DỰNG PIPELINE DỮ LIỆU...")
 ds_train = ds_train.map(preprocess, num_parallel_calls=tf.data.AUTOTUNE)
 ds_train = ds_train.cache()
@@ -95,7 +95,7 @@ ds_test = ds_test.cache()
 ds_test = ds_test.prefetch(tf.data.AUTOTUNE)
 print(">>> PIPELINE DỮ LIỆU ĐÃ SẴN SÀNG.")
 
-# Xây dựng, biên dịch và huấn luyện model (Không đổi)
+# Xây dựng, biên dịch và huấn luyện model
 model = create_char_cnn_model()
 model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
               loss='categorical_crossentropy',

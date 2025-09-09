@@ -1,6 +1,5 @@
 # config.py
-
-# Đường dẫn đến file model đã huấn luyện trên máy tính
+# Đường dẫn đến file model đã huấn luyện
 MODEL_PATH = 'saved_model_char_balanced/emnist_balanced_cnn_model.h5'
 
 # Cấu hình ảnh

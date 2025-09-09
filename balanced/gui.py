@@ -13,10 +13,9 @@ from advanced_preprocessor import cleanup_and_standardize_char
 class ProOCRApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Nhận dạng chữ viết tay sử dụng mạng nơ ron")
+        self.title("Nhận dạng chữ viết tay sử dụng mạng nơ ron với Balanced")
         self.geometry("1100x800")
         self.configure(bg="#F0F0F0")
-
         # --- BIẾN LƯU TRỮ TRẠNG THÁI ---
         self.original_pil_image = None
         self.display_cv_image = None
@@ -24,7 +23,6 @@ class ProOCRApp(tk.Tk):
         self.crop_rect_id = None
         self.crop_start_x, self.crop_start_y = 0, 0
         self.scale_factor, self.x_offset, self.y_offset = 1.0, 0, 0
-
         # --- TẢI MODEL ---
         try:
             self.model = tf.keras.models.load_model(MODEL_PATH)
@@ -32,11 +30,9 @@ class ProOCRApp(tk.Tk):
             messagebox.showerror("Lỗi", f"Không thể tải model từ '{MODEL_PATH}': {e}")
             self.destroy();
             return
-
         self._setup_styles()
         self._load_icons()
         self._create_widgets()
-
     def _setup_styles(self):
         BG_COLOR = "#F0F0F0"
         FRAME_BG_COLOR = "#FFFFFF"

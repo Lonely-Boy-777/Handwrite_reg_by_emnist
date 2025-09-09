@@ -7,7 +7,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 
 # PHẦN 1: CẤU HÌNH CHO MODEL EMNIST BYCLASS
 
-MODEL_PATH = 'saved_model_char_byclass/emnist_byclass_cnn_model.h5'
+MODEL_PATH = '../saved_model_char_byclass/emnist_byclass_cnn_model.h5'
 NUM_CLASSES = 62
 LABEL_MAPPING = {
     0:'0', 1:'1', 2:'2', 3:'3', 4:'4', 5:'5', 6:'6', 7:'7', 8:'8', 9:'9',

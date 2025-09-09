@@ -1,19 +1,18 @@
 # gui.py
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
-from PIL import Image, ImageTk, ImageDraw, ImageFont
+from PIL import Image, ImageTk
 import cv2
 import numpy as np
 import tensorflow as tf
-import os
 from config import *
-from advanced_preprocessor import cleanup_and_standardize_char
+from byclass.advanced_preprocessor import cleanup_and_standardize_char
 
 
 class ProOCRApp(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("Nhận dạng chữ viết tay sử dụng mạng nơ ron")
+        self.title("Nhận dạng chữ viết tay sử dụng mạng nơ ron với Byclass")
         self.geometry("1100x800")
         self.configure(bg="#F0F0F0")
 
