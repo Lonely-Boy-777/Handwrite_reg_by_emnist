@@ -1,61 +1,77 @@
-Đây là ứng dụng có giao diện đồ họa (GUI) được xây dựng bằng Python, với
-mục đích chính là nhận dạng các ký tự viết tay từ hình ảnh do người
-dùng cung cấp. Chương trình sử dụng mô hình Mạng Nơ-ron Tích chập (CNN)
-để đưa ra dự đoán với độ chính xác cao.
 
 
---- TÍNH NĂNG CHÍNH ---
+````markdown
+# Dự án Nhận dạng Ký tự Viết tay bằng Mạng CNN
 
-  * Tải và hiển thị hình ảnh: Cho phép tải lên các file ảnh (.jpg, .png)
-    và hiển thị trên giao diện chính.
-  * Xoay ảnh: Cung cấp tính năng xoay ảnh sang trái hoặc phải để điều
-    chỉnh hướng của văn bản.
-  * Cắt ký tự trực quan: Người dùng có thể dùng chuột để vẽ một hình
-    chữ nhật xung quanh ký tự cần nhận dạng.
-  * Xem trước ảnh tiền xử lí: Hiển thị hình ảnh ký tự sau khi đã được
-    tiền xử lý (chuyển sang trắng đen, chuẩn hóa kích thước, căn giữa)
-    trước khi đưa vào mô hình.
-  * Dự đoán ký tự: Sử dụng mô hình CNN đã được huấn luyện để dự đoán
-    ký tự với một nút bấm.
-  * Hiển thị kết quả và độ tin cậy: Trả về kết quả dự đoán kèm theo
-    tỷ lệ phần trăm độ tin cậy của mô hình. Màu sắc kết quả thay đổi
-    dựa trên độ tin cậy.
+Đây là chương trình nhận dạng chữ viết tay sử dụng mô hình mạng nơ-ron tích chập (CNN) để huấn luyện. Ứng dụng có giao diện đồ họa thân thiện, cho phép người dùng tải ảnh, chọn ký tự và thực hiện dự đoán.
 
---- CẤU TRÚC DỰ ÁN ---
+## 📂 Cấu trúc Dự án
 
+Dự án gồm có 2 phiên bản độc lập, nằm trong hai thư mục **`byclass`** và **`balanced`**. Cả hai phiên bản đều sử dụng cùng một kiến trúc mô hình nhưng được huấn luyện trên hai bộ dữ liệu khác nhau của TensorFlow EMNIST.
 
-Kho chứa này bao gồm hai phiên bản độc lập của ứng dụng, nằm trong
-hai thư mục riêng biệt:
+* **`/byclass`**:
+    * Mô hình được huấn luyện trên bộ dữ liệu `emnist/byclass` (62 lớp).
+    * Có khả năng phân biệt chữ viết hoa và viết thường (A vs a).
 
-  * /byclass:
-    Phiên bản sử dụng model được huấn luyện trên bộ dữ liệu EMNIST ByClass
-    (62 lớp), có khả năng phân biệt chữ viết hoa và viết thường (ví dụ: A vs a).
+* **`/balanced`**:
+    * Mô hình được huấn luyện trên bộ dữ liệu `emnist/balanced` (47 lớp).
+    * Đây là phiên bản được tối ưu, đã hợp nhất các ký tự hoa/thường có hình dạng giống nhau (ví dụ: 'C' và 'c') để tăng độ chính xác.
 
-  * /balanced:
-    Phiên bản sử dụng model được huấn luyện trên bộ dữ liệu EMNIST Balanced
-    (47 lớp). Phiên bản này được tối ưu hơn, đã hợp nhất các ký tự có
-    hình dạng giống nhau (ví dụ: 'C' và 'c') để tăng độ chính xác.
+## 🚀 Hướng dẫn Cài đặt và Sử dụng
 
+Để chạy được dự án, vui lòng thực hiện theo các bước sau.
 
---- KHỞI ĐỘNG ỨNG DỤNG ---
+**1. Tải dự án về máy (Clone):**
+```bash
+git clone [URL-KHO-CHUA-GIT-CUA-BAN]
+cd [TEN-THU-MUC-DU-AN]
+````
 
-  Sau khi tải xuống hoàn tất, đảm bảo bạn đang ở trong thư mục của phiên
-  bản đã chọn (/byclass hoặc /balanced), hãy chạy 'main.py'
-  Cửa sổ ứng dụng sẽ xuất hiện và bạn có thể bắt đầu sử dụng.
+**2. Lựa chọn phiên bản và di chuyển vào thư mục:**
+Hãy quyết định bạn muốn chạy phiên bản nào. Ví dụ, để chạy phiên bản `balanced`:
 
-  
-  <img width="589" height="333" alt="image" src="https://github.com/user-attachments/assets/6cc85edb-8a85-4810-af86-f24256b0827d" />
+```bash
+cd balanced
+```
 
+*(Lưu ý: Các lệnh tiếp theo phải được thực hiện bên trong thư mục phiên bản bạn đã chọn)*
 
-  
---- THÔNG TIN HUẤN LUYỆN ---
+**3. Tạo và kích hoạt môi trường ảo:**
 
-  Mô hình được huấn luyện bằng Google Colab. Chi tiết xem tại:
-  * Model ByClass: https://colab.research.google.com/drive/1DBSqM-B2FwLzB9SaF8KVC_yFftAEQxef
-  * Model Balanced: https://colab.research.google.com/drive/11qXK_W5CEG7WC7YC9O78_w76ZqJl2Wi8
+```bash
+# Tạo môi trường ảo
+python -m venv venv
 
+# Kích hoạt môi trường ảo (trên Windows)
+venv\Scripts\activate
 
---- CÔNG NGHỆ SỬ DỤNG ---
+# Kích hoạt môi trường ảo (trên macOS/Linux)
+source venv/bin/activate
+```
+
+**4. Cài đặt các thư viện cần thiết:**
+
+```bash
+pip install -r requirements.txt
+```
+
+*(Lưu ý: Hãy chắc chắn bạn đã có file `requirements.txt` trong mỗi thư mục dự án)*
+
+**5. Chạy ứng dụng:**
+Sau khi cài đặt xong, chạy file `main.py` để khởi động giao diện.
+
+```bash
+python main.py
+```
+
+## 🧠 Huấn luyện Mô hình
+
+Mô hình được huấn luyện bằng Google Colab tại các đường dẫn sau:
+
+  * **Model ByClass:** [Link tới Google Colab](https://colab.research.google.com/drive/1DBSqM-B2FwLzB9SaF8KVC_yFftAEQxef?usp=sharing)
+  * **Model Balanced:** [Link tới Google Colab](https://colab.research.google.com/drive/11qXK_W5CEG7WC7YC9O78_w76ZqJl2Wi8?usp=sharing)
+
+## 🛠️ Công nghệ sử dụng
 
   * Python
   * TensorFlow / Keras
@@ -65,4 +81,7 @@ hai thư mục riêng biệt:
   * Numpy
   * Matplotlib / Seaborn
 
+<!-- end list -->
 
+```
+```
